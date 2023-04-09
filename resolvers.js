@@ -16,6 +16,9 @@ const resolvers = {
       employees: async () => {
         try {
           const employees = await Employee.find();
+          if (!employees) {
+            throw new Error('No employees found.');
+          }
           return employees;
         } catch (err) {
           throw err;
