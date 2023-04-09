@@ -21,11 +21,13 @@ async function startServer() {
     useNewUrlParser: true,
     useUnifiedTopology: true
     });
+    const port = process.env.PORT || 3000;
     app.get('/', (req, res) => {
-    res.redirect('/graphql');
-    });
-    app.listen(3000, function() {
-    console.log('App listening on port 3000');
-    });
+        res.redirect('/graphql');
+      });
+      
+      app.listen(port, () => {
+        console.log(`Server started on port ${port}`);
+      });
 }
 startServer();
