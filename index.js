@@ -22,7 +22,7 @@ async function startServer() {
     useUnifiedTopology: true
     });
     app.get('/', (req, res) => {
-        res.redirect('/graphql');
+    res.redirect('/graphql');
     });
     app.listen(3000, function() {
     console.log('App listening on port 3000');
